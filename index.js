@@ -16,7 +16,7 @@ client.on('voiceStateUpdate', async (prevMember, nextMember) => {
   const prevMemberChannel = prevMember.voiceChannel
   const nextMemberChannel = nextMember.voiceChannel
 
-  // TODO: User redis or ?? for cache join in 12 - 24 hours
+  // TODO: Use redis or ?? for cache join in 12 - 24 hours
   if (prevMemberChannel === undefined && nextMemberChannel !== undefined) {
     try {
       const connection = await nextMemberChannel.join()
